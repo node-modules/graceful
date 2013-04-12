@@ -1,4 +1,4 @@
-# connect with cluster and domain example
+# connect with cluster example
 
 * Master: dispatch.js
 * Worker: worker.js
@@ -16,44 +16,29 @@ curl asycerror twice:
 
 ```bash
 $ curl localhost:1337/asycerror
-domainThrown: true
-ReferenceError: foo is not defined
-    at Object._onTimeout (/Users/mk2/git/domain-middleware/example/connect_with_cluster/app.js:28:11)
-    at Timer.list.ontimeout (timers.js:101:19)
 
 $ curl localhost:1337/asycerror
-domainThrown: true
-ReferenceError: foo is not defined
-    at Object._onTimeout (/Users/mk2/git/domain-middleware/example/connect_with_cluster/app.js:28:11)
-    at Timer.list.ontimeout (timers.js:101:19)
+
 ```
 
-[dispatch.js](https://github.com/fengmk2/domain-middleware/blob/master/example/connect_with_cluster/dispatch.js) stdout:
+[dispatch.js](https://github.com/fengmk2/graceful/blob/master/example/connect_with_cluster/dispatch.js) stdout:
 
 ```bash
 $ node example/connect_with_cluster/dispatch.js 
 [Thu Apr 11 2013 18:45:36 GMT+0800 (CST)] [worker:21711] start listen on 1337
 [Thu Apr 11 2013 18:45:36 GMT+0800 (CST)] [worker:21712] start listen on 1337
-GET /asycerror
-domainThrown: true
-ReferenceError: foo is not defined
-    at Object._onTimeout (/Users/mk2/git/domain-middleware/example/connect_with_cluster/app.js:28:11)
-    at Timer.list.ontimeout (timers.js:101:19)
-[Thu Apr 11 2013 18:45:47 GMT+0800 (CST)] [worker:21711] close server!
-[Thu Apr 11 2013 18:45:47 GMT+0800 (CST)] [worker:21711] worker disconnect!
-[Thu Apr 11 2013 18:45:47 GMT+0800 (CST)] [master:21710] wroker:21711 disconnect! new worker:21739 fork
-[Thu Apr 11 2013 18:45:47 GMT+0800 (CST)] [worker:21739] start listen on 1337
-GET /asycerror
-domainThrown: true
-ReferenceError: foo is not defined
-    at Object._onTimeout (/Users/mk2/git/domain-middleware/example/connect_with_cluster/app.js:28:11)
-    at Timer.list.ontimeout (timers.js:101:19)
-[Thu Apr 11 2013 18:45:48 GMT+0800 (CST)] [worker:21739] close server!
-[Thu Apr 11 2013 18:45:48 GMT+0800 (CST)] [worker:21739] worker disconnect!
-[Thu Apr 11 2013 18:45:48 GMT+0800 (CST)] [master:21710] wroker:21739 disconnect! new worker:21749 fork
-[Thu Apr 11 2013 18:45:48 GMT+0800 (CST)] [worker:21749] start listen on 1337
-[Thu Apr 11 2013 18:45:50 GMT+0800 (CST)] [worker:21711] kill timeout, exit now.
-[Thu Apr 11 2013 18:45:50 GMT+0800 (CST)] [master:21710] wroker:21711 exit!
-[Thu Apr 11 2013 18:45:51 GMT+0800 (CST)] [worker:21739] kill timeout, exit now.
-[Thu Apr 11 2013 18:45:51 GMT+0800 (CST)] [master:21710] wroker:21739 exit!
+[uncaughtException] throw error 1 times
+[ReferenceError: foo is not defined]
+[Fri Apr 12 2013 18:11:34 GMT+0800 (CST)] [worker:52207] close server!
+[Fri Apr 12 2013 18:11:34 GMT+0800 (CST)] [worker:52207] worker disconnect!
+[Fri Apr 12 2013 18:11:34 GMT+0800 (CST)] [master:52205] wroker:52207 disconnect! new worker:52317 fork
+[Fri Apr 12 2013 18:11:34 GMT+0800 (CST)] [worker:52317] start listen on 1337
+[uncaughtException] throw error 1 times
+[ReferenceError: foo is not defined]
+[Fri Apr 12 2013 18:11:35 GMT+0800 (CST)] [worker:52206] close server!
+[Fri Apr 12 2013 18:11:35 GMT+0800 (CST)] [worker:52206] worker disconnect!
+[Fri Apr 12 2013 18:11:35 GMT+0800 (CST)] [master:52205] wroker:52206 disconnect! new worker:52328 fork
+[Fri Apr 12 2013 18:11:35 GMT+0800 (CST)] [worker:52328] start listen on 1337
+[Fri Apr 12 2013 18:11:37 GMT+0800 (CST)] [worker:52207] kill timeout, exit now.
+[Fri Apr 12 2013 18:11:37 GMT+0800 (CST)] [master:52205] wroker:52207 exit!
 ```
