@@ -12,9 +12,6 @@
 
 var http = require('http');
 var connect = require('connect');
-var graceful = require('../../');
-
-var server = http.createServer();
 
 var app = connect(
   function (req, res, next) {
@@ -39,12 +36,6 @@ var app = connect(
   }
 );
 
-server.on('request', app);
-
-graceful({
-  server: server,
-  killTimeout: 3000,
-});
-
+var server = http.createServer(app);
 module.exports = server;
 

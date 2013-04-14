@@ -39,7 +39,9 @@ var app = connect()
 
 app = app.listen(1984);
 
+var app1 = connect().listen(1985);
+
 graceful({
-  server: app,
+  server: [app, app1],
   killTimeout: 10000,
 });

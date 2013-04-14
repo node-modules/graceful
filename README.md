@@ -56,6 +56,15 @@ graceful({
 });
 ```
 
+If you have multi servers on one process, you just add them to `server`:
+
+```js
+graceful({
+  server: [app1, app2, restapi],
+  killTimeout: 30000,
+});
+```
+
 ## License 
 
 (The MIT License)
