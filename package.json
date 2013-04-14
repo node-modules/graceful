@@ -1,6 +1,6 @@
 {
   "name": "graceful",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Graceful exit when `uncaughtException` emit, base on `process.on('uncaughtException')`.",
   "main": "index.js",
   "scripts": {
