@@ -21,5 +21,5 @@ console.log('[%s] [worker:%s] rest api start listen on %s', new Date(), process.
 
 graceful({
   server: [server, restapi],
-  killTimeout: 3000,
+  killTimeout: 10000,
 });

@@ -22,7 +22,16 @@ var app = connect(
         }, 10);
         return;
       }
-      res.end(req.method + ' ' + req.url + ', headers: ' + JSON.stringify(req.headers));
+      process.nextTick(function () {
+        res.setHeader('content-type', 'text/json');
+        res.end(JSON.stringify({
+          method: req.method,
+          url: req.url,
+          headers: req.headers,
+          Connection: res.getHeader('connection') || 'keep-alive',
+          pid: process.pid,
+        }));
+      });
     });
     req.resume();
   },
