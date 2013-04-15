@@ -22,4 +22,11 @@ console.log('[%s] [worker:%s] rest api start listen on %s', new Date(), process.
 graceful({
   server: [server, restapi],
   killTimeout: 10000,
+  error: function (err, throwErrorCount) {
+    // you can do custom log here, send email, call phone and so on...
+    if (err.message) {
+      err.message += ' (uncaughtException throw ' + throwErrorCount + ' times on pid:' + process.pid + ')';
+    }
+    // logger.error(err);
+  }
 });
