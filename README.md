@@ -67,6 +67,8 @@ graceful({
 });
 ```
 
+If you are using [pm](https://github.com/aleafs/pm), you can follow the [graceful_exit with pm demo](https://github.com/aleafs/pm/tree/master/demo/graceful_exit).
+
 ## License 
 
 (The MIT License)
