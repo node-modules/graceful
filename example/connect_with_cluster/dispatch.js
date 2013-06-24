@@ -30,7 +30,7 @@ cluster.setupMaster({
 // The important thing is that the master does very little,
 // increasing our resilience to unexpected errors.
 
-// cluster.fork();
+cluster.fork();
 cluster.fork();
 
 cluster.on('disconnect', function (worker) {

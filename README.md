@@ -1,4 +1,4 @@
-graceful [![Build Status](https://secure.travis-ci.org/fengmk2/graceful.png)](http://travis-ci.org/fengmk2/graceful)
+graceful [![Build Status](https://secure.travis-ci.org/fengmk2/graceful.png)](http://travis-ci.org/fengmk2/graceful) [![Coverage Status](https://coveralls.io/repos/fengmk2/graceful/badge.png)](https://coveralls.io/r/fengmk2/graceful)
 =======
 
 ![logo](https://raw.github.com/fengmk2/graceful/master/logo.png)
@@ -8,8 +8,6 @@ Graceful exit when `uncaughtException` emit, base on `process.on('uncaughtExcept
 [domain failure](https://github.com/fengmk2/domain-middleware/blob/master/example/failure.js).
 
 [Node.js 异步异常的处理与domain模块解析](http://deadhorse.me/nodejs/2013/04/13/exception_and_domain.html)
-
-* jscoverage: [xx%](http://fengmk2.github.com/coverage/graceful.html)
 
 ## Install
 
