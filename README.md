@@ -1,6 +1,8 @@
 graceful [![Build Status](https://secure.travis-ci.org/fengmk2/graceful.png)](http://travis-ci.org/fengmk2/graceful) [![Coverage Status](https://coveralls.io/repos/fengmk2/graceful/badge.png)](https://coveralls.io/r/fengmk2/graceful)
 =======
 
+[![NPM](https://nodei.co/npm/graceful.png?downloads=true&stars=true)](https://nodei.co/npm/graceful/)
+
 ![logo](https://raw.github.com/fengmk2/graceful/master/logo.png)
 
 Graceful exit when `uncaughtException` emit, base on `process.on('uncaughtException')`.
@@ -19,7 +21,7 @@ $ npm install graceful
 
 Please see [connect_with_cluster](https://github.com/fengmk2/graceful/tree/master/example/connect_with_cluster) example.
 
-This below code just for dev demo, don't use it on production env: 
+This below code just for dev demo, don't use it on production env:
 
 ```js
 var connect = require('connect');
@@ -67,7 +69,7 @@ graceful({
 
 If you are using [pm](https://github.com/aleafs/pm), you can follow the [graceful_exit with pm demo](https://github.com/aleafs/pm/tree/master/demo/graceful_exit).
 
-## License 
+## License
 
 (The MIT License)
 
