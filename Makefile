@@ -7,7 +7,7 @@ install:
 	@$(NPM_INSTALL)
 
 test: install
-	@NODE_ENV=test ./node_modules/mocha/bin/mocha \
+	@NODE_ENV=test ./node_modules/.bin/mocha \
 		--reporter $(REPORTER) \
 		--timeout $(TIMEOUT) \
 		$(MOCHA_OPTS) \
@@ -26,4 +26,10 @@ test-coveralls:
 
 test-all: test test-cov
 
-.PHONY: install test test-cov test-all test-coveralls
+autod: install
+	@./node_modules/.bin/autod -w -e example
+
+contributors: install
+	@./node_modules/.bin/contributors -f plain -o AUTHORS
+
+.PHONY: test

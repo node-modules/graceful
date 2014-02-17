@@ -1,4 +1,11 @@
 
+0.0.6 / 2014-02-17 
+==================
+
+  * add console.error(err.stack) by default (@dead-horse)
+  * add npm image
+  * support coveralls
+
 0.0.5 / 2013-04-18 
 ==================
 
