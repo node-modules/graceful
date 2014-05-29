@@ -16,7 +16,7 @@ var connect = require('connect');
 var app = connect(
   function (req, res, next) {
     req.on('end', function () {
-      if (req.url === '/asycerror') {
+      if (req.url === '/asyncerror') {
         setTimeout(function () {
           foo.bar();
         }, 10);

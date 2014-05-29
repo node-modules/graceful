@@ -33,13 +33,28 @@ cluster.setupMaster({
 cluster.fork();
 cluster.fork();
 
+// when worker disconnect, fork a new one
 cluster.on('disconnect', function (worker) {
   var w = cluster.fork();
-  console.error('[%s] [master:%s] wroker:%s disconnect! new worker:%s fork', 
+  console.error('[%s] [master:%s] wroker:%s disconnect! new worker:%s fork',
     new Date(), process.pid, worker.process.pid, w.process.pid);
 });
 
+// if you do not want every disconnect fork a new worker.
+// you can listen worker's message.
+// graceful will send `graceful:disconnect` message when disconnect.
+
+// cluster.on('fork', function(worker) {
+//   worker.on('message', function (msg) {
+//     if (msg === 'graceful:disconnect') {
+//       var w = cluster.fork();
+//       console.error('[%s] [master:%s] wroker:%s disconnect! new worker:%s fork',
+//       new Date(), process.pid, worker.process.pid, w.process.pid);
+//     }
+//   });
+// });
+
 cluster.on('exit', function (worker) {
-  console.error('[%s] [master:%s] wroker:%s exit!', 
+  console.error('[%s] [master:%s] wroker:%s exit!',
     new Date(), process.pid, worker.process.pid);
 });
