@@ -2,7 +2,7 @@ TESTS = test/*.test.js
 REPORTER = spec
 TIMEOUT = 5000
 MOCHA_OPTS =
-NPM_INSTALL = npm install --registry=http://registry.npm.taobao.org --cache=${HOME}/.npm/.cache/cnpm --disturl=http://dist.u.qiniudn.com
+NPM_INSTALL = npm install --registry=http://registry.npm.taobao.org --disturl=http://dist.u.qiniudn.com
 install:
 	@$(NPM_INSTALL)
 
@@ -27,7 +27,7 @@ test-coveralls:
 test-all: test test-cov
 
 autod: install
-	@./node_modules/.bin/autod -w -e example
+	@./node_modules/.bin/autod -w -e example --prefix="~"
 
 contributors: install
 	@./node_modules/.bin/contributors -f plain -o AUTHORS

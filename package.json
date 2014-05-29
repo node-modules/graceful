@@ -1,6 +1,6 @@
 {
   "name": "graceful",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Graceful exit when `uncaughtException` emit, base on `process.on('uncaughtException')`.",
   "main": "index.js",
   "scripts": {
@@ -16,13 +16,13 @@
   "devDependencies": {
     "autod": "*",
     "blanket": "*",
-    "connect": "2.13.0",
+    "connect": "~2.17.3",
     "contributors": "*",
     "coveralls": "*",
     "mocha": "*",
     "mocha-lcov-reporter": "*",
-    "should": "3.1.2",
-    "supertest": "0.9.0",
+    "should": "~3.3.2",
+    "supertest": "~0.13.0",
     "travis-cov": "*"
   },
   "homepage": "https://github.com/fengmk2/graceful",
