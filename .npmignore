@@ -1,6 +1,5 @@
 test/
-coverage.html
-lib-cov/
+coverage/
 Makefile
 .travis.yml
-logo.png
+example/

@@ -37,7 +37,7 @@ cluster.fork();
 cluster.on('disconnect', function (worker) {
   var w = cluster.fork();
   console.error('[%s] [master:%s] wroker:%s disconnect! new worker:%s fork',
-    new Date(), process.pid, worker.process.pid, w.process.pid);
+    Date(), process.pid, worker.process.pid, w.process.pid);
 });
 
 // if you do not want every disconnect fork a new worker.
@@ -56,5 +56,5 @@ cluster.on('disconnect', function (worker) {
 
 cluster.on('exit', function (worker) {
   console.error('[%s] [master:%s] wroker:%s exit!',
-    new Date(), process.pid, worker.process.pid);
+    Date(), process.pid, worker.process.pid);
 });

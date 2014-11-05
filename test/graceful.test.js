@@ -1,10 +1,14 @@
-/*!
+/**!
  * graceful - test/graceful.test.js
- * Copyright(c) 2012 fengmk2 <fengmk2@gmail.com>
+ *
+ * Copyright(c) fengmk2 and other contributors.
  * MIT Licensed
+ *
+ * Authors:
+ *   fengmk2 <fengmk2@gmail.com> (http://fengmk2.github.com)
  */
 
-"use strict";
+'use strict';
 
 /**
  * Module dependencies.
@@ -12,13 +16,12 @@
 
 var cluster = require('cluster');
 var http = require('http');
-var connect = require('connect');
-var graceful = require('../');
-var should = require('should');
 var request = require('supertest');
+var express = require('express');
+var graceful = require('../');
 
 describe('graceful.test.js', function () {
-  var normalHandler = function normalHandler(req, res, next) {
+  function normalHandler(req, res, next) {
     if (req.url === '/sync_error') {
       throw new Error('sync_error');
     }
@@ -50,18 +53,18 @@ describe('graceful.test.js', function () {
       return;
     }
     res.end(req.url);
-  };
+  }
 
-  var errorHandler = function errorHandler(err, req, res, next) {
+  function errorHandler(err, req, res, next) {
     res.statusCode = 500;
     res.end(err.message);
-  };
+  }
 
   var server = http.createServer();
-  graceful({ server: server, killTimeout: 1000 });
+  graceful({ server: server, killTimeout: '1s' });
 
-  var app = connect()
-  .use('/public', connect.static(__dirname + '/fixtures'))
+  var app = express()
+  .use('/public', express.static(__dirname + '/fixtures'))
   .use(normalHandler)
   .use(errorHandler);
 
@@ -133,7 +136,5 @@ describe('graceful.test.js', function () {
       .expect('ff is not defined')
       .expect(500, done);
     });
-    
   });
-
 });

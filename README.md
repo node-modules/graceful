@@ -1,15 +1,37 @@
-graceful [![Build Status](https://secure.travis-ci.org/fengmk2/graceful.png)](http://travis-ci.org/fengmk2/graceful) [![Coverage Status](https://coveralls.io/repos/fengmk2/graceful/badge.png)](https://coveralls.io/r/fengmk2/graceful)
-=======
+# graceful
 
-[![NPM](https://nodei.co/npm/graceful.png?downloads=true&stars=true)](https://nodei.co/npm/graceful/)
+[![NPM version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
+[![Test coverage][coveralls-image]][coveralls-url]
+[![Gittip][gittip-image]][gittip-url]
+[![David deps][david-image]][david-url]
+[![node version][node-image]][node-url]
+[![npm download][download-image]][download-url]
 
-![logo](https://raw.github.com/fengmk2/graceful/master/logo.png)
+[npm-image]: https://img.shields.io/npm/v/graceful.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/graceful
+[travis-image]: https://img.shields.io/travis/node-modules/graceful.svg?style=flat-square
+[travis-url]: https://travis-ci.org/node-modules/graceful
+[coveralls-image]: https://img.shields.io/coveralls/node-modules/graceful.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/node-modules/graceful?branch=master
+[gittip-image]: https://img.shields.io/gittip/fengmk2.svg?style=flat-square
+[gittip-url]: https://www.gittip.com/fengmk2/
+[david-image]: https://img.shields.io/david/node-modules/graceful.svg?style=flat-square
+[david-url]: https://david-dm.org/node-modules/graceful
+[node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
+[node-url]: http://nodejs.org/download/
+[download-image]: https://img.shields.io/npm/dm/graceful.svg?style=flat-square
+[download-url]: https://npmjs.org/package/graceful
+
 
 Graceful exit when `uncaughtException` emit, base on `process.on('uncaughtException')`.
 
-[domain failure](https://github.com/fengmk2/domain-middleware/blob/master/example/failure.js).
+## Why we should use this module
 
-[Node.js 异步异常的处理与domain模块解析](http://deadhorse.me/nodejs/2013/04/13/exception_and_domain.html)
+It's the best way to handle `uncaughtException` on current situations.
+
+* [domain failure](https://github.com/fengmk2/domain-middleware/blob/master/example/failure.js).
+* [Node.js 异步异常的处理与domain模块解析](http://deadhorse.me/nodejs/2013/04/13/exception_and_domain.html)
 
 ## Install
 
@@ -24,10 +46,10 @@ Please see [connect_with_cluster](https://github.com/fengmk2/graceful/tree/maste
 This below code just for dev demo, don't use it on production env:
 
 ```js
-var connect = require('connect');
+var express = require('express');
 var graceful = require('graceful');
 
-var app = connect()
+var app = express()
 .use()
 .use(function(req, res){
   if (Math.random() > 0.5) {
@@ -50,11 +72,11 @@ var app = connect()
   res.end(err.message);
 });
 
-app = app.listen(1984);
+var server = app.listen(1984);
 
 graceful({
-  server: app,
-  killTimeout: 30000,
+  servers: [server],
+  killTimeout: '30s',
 });
 ```
 
@@ -62,18 +84,19 @@ If you have multi servers on one process, you just add them to `server`:
 
 ```js
 graceful({
-  server: [app1, app2, restapi],
-  killTimeout: 30000,
+  servers: [server1, server2, restapi],
+  killTimeout: '15s',
 });
 ```
 
-If you are using [pm](https://github.com/aleafs/pm), you can follow the [graceful_exit with pm demo](https://github.com/aleafs/pm/tree/master/demo/graceful_exit).
+If you are using [pm](https://github.com/aleafs/pm),
+you can follow the [graceful_exit with pm demo](https://github.com/aleafs/pm/tree/master/demo/graceful_exit).
 
 ## License
 
 (The MIT License)
 
-Copyright (c) 2013 fengmk2 &lt;fengmk2@gmail.com&gt;
+Copyright (c) 2013 - 2014 fengmk2 &lt;fengmk2@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

@@ -11,7 +11,7 @@
  */
 
 var http = require('http');
-var connect = require('connect');
+var express = require('express');
 var graceful = require('../');
 
 var keepAliveClient = http.request({
@@ -19,7 +19,7 @@ var keepAliveClient = http.request({
   path: '/index.html'
 });
 
-var app = connect()
+var app = express()
 .use(function (req, res) {
   if (!keepAliveClient) {
     setTimeout(function () {
@@ -33,15 +33,15 @@ var app = connect()
   keepAliveClient.end();
   keepAliveClient = null;
 })
-.use(function(err, req, res, next) {
+.use(function (err, req, res, next) {
   res.end(err.message);
 });
 
 app = app.listen(1984);
 
-var app1 = connect().listen(1985);
+var app1 = express().listen(1985);
 
 graceful({
   server: [app, app1],
-  killTimeout: 10000,
+  killTimeout: '10s',
 });
