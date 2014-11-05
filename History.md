@@ -1,4 +1,9 @@
 
+1.0.0 / 2014-11-05
+==================
+
+ * refator: use express instead connect on example
+
 0.1.0 / 2014-05-29
 ==================
 
