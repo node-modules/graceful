@@ -1,5 +1,5 @@
 /**!
- * graceful - example/connect_with_cluster/app.js
+ * graceful - example/express_with_cluster/app.js
  *
  * Copyright(c) fengmk2 and other contributors.
  * MIT Licensed
