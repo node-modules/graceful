@@ -36,7 +36,7 @@ cluster.fork();
 // when worker disconnect, fork a new one
 cluster.on('disconnect', function (worker) {
   var w = cluster.fork();
-  console.error('[%s] [master:%s] wroker:%s disconnect! new worker:%s fork',
+  console.error('[%s] [master:%s] worker:%s disconnect! new worker:%s fork',
     Date(), process.pid, worker.process.pid, w.process.pid);
 });
 
@@ -48,13 +48,13 @@ cluster.on('disconnect', function (worker) {
 //   worker.on('message', function (msg) {
 //     if (msg === 'graceful:disconnect') {
 //       var w = cluster.fork();
-//       console.error('[%s] [master:%s] wroker:%s disconnect! new worker:%s fork',
+//       console.error('[%s] [master:%s] worker:%s disconnect! new worker:%s fork',
 //       new Date(), process.pid, worker.process.pid, w.process.pid);
 //     }
 //   });
 // });
 
 cluster.on('exit', function (worker) {
-  console.error('[%s] [master:%s] wroker:%s exit!',
+  console.error('[%s] [master:%s] worker:%s exit!',
     Date(), process.pid, worker.process.pid);
 });
