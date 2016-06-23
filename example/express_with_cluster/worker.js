@@ -1,14 +1,4 @@
-/*!
- * graceful - example/express_with_cluster/dispatch.js
- * Copyright(c) 2013 fengmk2 <fengmk2@gmail.com>
- * MIT Licensed
- */
-
 "use strict";
-
-/**
- * Module dependencies.
- */
 
 var PORT = +process.env.PORT || 1337;
 var graceful = require('../../');

@@ -1,18 +1,4 @@
-/**!
- * graceful - test/graceful.test.js
- *
- * Copyright(c) fengmk2 and other contributors.
- * MIT Licensed
- *
- * Authors:
- *   fengmk2 <fengmk2@gmail.com> (http://fengmk2.github.com)
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var cluster = require('cluster');
 var http = require('http');
