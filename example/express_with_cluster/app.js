@@ -1,18 +1,4 @@
-/**!
- * graceful - example/express_with_cluster/app.js
- *
- * Copyright(c) fengmk2 and other contributors.
- * MIT Licensed
- *
- * Authors:
- *   fengmk2 <fengmk2@gmail.com> (http://fengmk2.github.com)
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var http = require('http');
 var express = require('express');

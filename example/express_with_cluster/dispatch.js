@@ -1,14 +1,4 @@
-/*!
- * graceful - example/express_with_cluster/dispatch.js
- * Copyright(c) 2013 fengmk2 <fengmk2@gmail.com>
- * MIT Licensed
- */
-
 "use strict";
-
-/**
- * Module dependencies.
- */
 
 // http://nodejs.org/docs/latest/api/domain.html#domain_warning_don_t_ignore_errors
 var cluster = require('cluster');
