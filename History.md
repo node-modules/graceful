@@ -1,4 +1,10 @@
 
+1.0.1 / 2016-06-23
+==================
+
+  * fix: print more server connections log (#9)
+  * fix: ignore GRACEFUL_COV env
+
 1.0.0 / 2014-11-05
 ==================
 
