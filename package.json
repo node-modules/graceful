@@ -7,8 +7,8 @@
     "index.js"
   ],
   "scripts": {
-    "test": "mocha -R spec -t 5000 -r should test/*.test.js",
-    "test-cov": "istanbul cover _mocha -- -t 5000 -r should test/*.test.js",
+    "test": "mocha -R spec -t 5000 test/*.test.js",
+    "test-cov": "istanbul cover _mocha -- -t 5000 test/*.test.js",
     "lint": "jshint .",
     "autod": "autod -w --prefix '^'"
   },
