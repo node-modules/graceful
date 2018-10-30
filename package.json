@@ -13,17 +13,18 @@
     "autod": "autod -w --prefix '^'"
   },
   "dependencies": {
-    "humanize-ms": "^1.2.0"
+    "humanize-ms": "^1.2.1",
+    "ps-tree": "^1.1.0"
   },
   "devDependencies": {
     "autod": "*",
     "contributors": "*",
-    "express": "4",
+    "express": "^4.16.4",
     "istanbul": "*",
     "jshint": "2",
-    "mocha": "*",
+    "mocha": "3",
     "should": "4",
-    "supertest": "1"
+    "supertest": "^3.3.0"
   },
   "homepage": "https://github.com/node-modules/graceful",
   "repository": {

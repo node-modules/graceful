@@ -3,6 +3,7 @@
 var http = require('http');
 var cluster = require('cluster');
 var ms = require('humanize-ms');
+var pstree = require('ps-tree');
 
 /**
  * graceful, please use with `cluster` in production env.
@@ -55,7 +56,10 @@ module.exports = function graceful(options) {
     var killtimer = setTimeout(function () {
       console.error('[%s] [graceful:worker:%s] kill timeout, exit now.', Date(), process.pid);
       if (process.env.NODE_ENV !== 'test') {
-        process.exit(1);
+        // kill children by SIGKILL before exit
+        killChildren(function() {
+          process.exit(1);
+        });
       }
     }, killTimeout);
     console.error('[%s] [graceful:worker:%s] will exit after %dms', Date(), process.pid, killTimeout);
@@ -106,3 +110,22 @@ module.exports = function graceful(options) {
     }
   });
 };
+
+function killChildren(callback) {
+  pstree(process.pid, function(err, children) {
+    // if get children error, just ignore it
+    if (err) children = [];
+    children.forEach(function(child) {
+      kill(parseInt(child.PID));
+    });
+    callback();
+  });
+}
+
+function kill(pid) {
+  try {
+    process.kill(pid, 'SIGKILL');
+  } catch (_) {
+    // ignore
+  }
+}
