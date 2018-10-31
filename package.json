@@ -7,23 +7,23 @@
     "index.js"
   ],
   "scripts": {
-    "test": "mocha -R spec -t 5000 -r should test/*.test.js",
-    "test-cov": "istanbul cover _mocha -- -t 5000 -r should test/*.test.js",
+    "test": "mocha -R spec -t 5000 test/*.test.js",
+    "test-cov": "istanbul cover _mocha -- -t 5000 test/*.test.js",
     "lint": "jshint .",
     "autod": "autod -w --prefix '^'"
   },
   "dependencies": {
-    "humanize-ms": "^1.2.0"
+    "humanize-ms": "^1.2.1",
+    "ps-tree": "^1.1.0"
   },
   "devDependencies": {
     "autod": "*",
-    "contributors": "*",
-    "express": "4",
-    "istanbul": "*",
+    "contributors": "^0.5.1",
+    "express": "^4.16.4",
+    "istanbul": "^0.4.5",
     "jshint": "2",
-    "mocha": "*",
-    "should": "4",
-    "supertest": "1"
+    "mocha": "^3.5.3",
+    "supertest": "^1.2.0"
   },
   "homepage": "https://github.com/node-modules/graceful",
   "repository": {
