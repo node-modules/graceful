@@ -113,8 +113,12 @@ module.exports = function graceful(options) {
 
 function killChildren(callback) {
   pstree(process.pid, function(err, children) {
-    // if get children error, just ignore it
-    if (err) children = [];
+    if (err) {
+      // if get children error, just ignore it
+      console.error('[%s] [graceful:worker:%s] pstree find children error: %s', Date(), process.pid, err);
+      callback();
+      return;
+    }
     children.forEach(function(child) {
       kill(parseInt(child.PID));
     });
