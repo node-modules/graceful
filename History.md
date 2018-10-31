@@ -1,4 +1,10 @@
 
+1.0.2 / 2018-10-31
+==================
+
+**others**
+  * [[`fa719ff`](http://github.com/node-modules/graceful/commit/fa719ff9c9793c28b624a919b92bfb2a269547c6)] -  fix: graceful exit kill children (#12) (Yiyu He <<dead_horse@qq.com>>)
+
 1.0.1 / 2016-06-23
 ==================
 
