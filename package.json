@@ -8,9 +8,10 @@
   ],
   "scripts": {
     "test": "mocha -R spec -t 5000 test/*.test.js",
-    "test-cov": "istanbul cover _mocha -- -t 5000 test/*.test.js",
+    "ci": "istanbul cover _mocha -- -t 5000 test/*.test.js",
     "lint": "jshint .",
-    "autod": "autod -w --prefix '^'"
+    "autod": "autod -w --prefix '^'",
+    "contributor": "git-contributor"
   },
   "dependencies": {
     "humanize-ms": "^1.2.1",
@@ -18,8 +19,9 @@
   },
   "devDependencies": {
     "autod": "*",
-    "contributors": "^0.5.1",
+    "egg-ci": "^1.19.1",
     "express": "^4.16.4",
+    "git-contributor": "^1.1.0",
     "istanbul": "^0.4.5",
     "jshint": "2",
     "mocha": "^3.5.3",
@@ -41,6 +43,10 @@
   ],
   "engines": {
     "node": ">= 0.10.0"
+  },
+  "ci": {
+    "type": "github",
+    "version": "8, 10, 12, 14, 16, 18"
   },
   "author": "fengmk2 <fengmk2@gmail.com>",
   "license": "MIT"
