@@ -46,6 +46,9 @@
   },
   "ci": {
     "type": "github",
+    "os": {
+      "github": "linux, macos"
+    },
     "version": "8, 10, 12, 14, 16, 18"
   },
   "author": "fengmk2 <fengmk2@gmail.com>",
