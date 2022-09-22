@@ -20,6 +20,7 @@ module.exports = function graceful(options) {
   var killTimeout = ms(options.killTimeout || '30s');
   var onError = options.error || function () {};
   var servers = options.servers || options.server || [];
+  var ignoreCode = options.ignoreCode || [];
   if (!Array.isArray(servers)) {
     servers = [servers];
   }
@@ -35,6 +36,12 @@ module.exports = function graceful(options) {
       Date(), process.pid, throwErrorCount);
     console.error(err);
     console.error(err.stack);
+
+    if(ignoreCode.includes(err.code)) {
+      console.error('Error code: %s matches ignore list: %s, don\'t exit.', err.code, '[ ' + ignoreCode.join(', ') + ' ]');
+      return;
+    }
+
     if (throwErrorCount > 1) {
       return;
     }
