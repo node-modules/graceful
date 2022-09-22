@@ -1,4 +1,13 @@
 
+1.1.0 / 2022-09-22
+==================
+
+**features**
+  * [[`e571409`](http://github.com/node-modules/graceful/commit/e571409d957cf1f209b4d61e7e3e4ede4babc76f)] - feat: support ignoreCode (#13) (hyj1991 <<yeekwanvong@gmail.com>>)
+
+**others**
+  * [[`52f008a`](http://github.com/node-modules/graceful/commit/52f008a3ed71764e288cf35281c87ab1ead3176f)] - 🤖 TEST: Use Github Action (fengmk2 <<fengmk2@gmail.com>>)
+
 1.0.2 / 2018-10-31
 ==================
 
