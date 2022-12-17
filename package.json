@@ -9,7 +9,7 @@
   "scripts": {
     "test": "egg-bin test",
     "ci": "egg-bin cov",
-    "lint": "jshint ."
+    "lint": "echo 'ignore'"
   },
   "dependencies": {
     "humanize-ms": "^1.2.1",
@@ -18,7 +18,6 @@
   "devDependencies": {
     "egg-bin": "^5.6.1",
     "express": "^4.16.4",
-    "jshint": "2",
     "supertest": "^1.2.0"
   },
   "homepage": "https://github.com/node-modules/graceful",
