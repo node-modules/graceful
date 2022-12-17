@@ -10,7 +10,6 @@
     "test": "mocha -R spec -t 5000 test/*.test.js",
     "ci": "istanbul cover _mocha -- -t 5000 test/*.test.js",
     "lint": "jshint .",
-    "autod": "autod -w --prefix '^'",
     "contributor": "git-contributor"
   },
   "dependencies": {
@@ -18,8 +17,6 @@
     "ps-tree": "^1.1.0"
   },
   "devDependencies": {
-    "autod": "*",
-    "egg-ci": "^1.19.1",
     "express": "^4.16.4",
     "git-contributor": "^1.1.0",
     "istanbul": "^0.4.5",
@@ -43,13 +40,6 @@
   ],
   "engines": {
     "node": ">= 0.10.0"
-  },
-  "ci": {
-    "type": "github",
-    "os": {
-      "github": "linux, macos"
-    },
-    "version": "8, 10, 12, 14, 16, 18"
   },
   "author": "fengmk2 <fengmk2@gmail.com>",
   "license": "MIT"
