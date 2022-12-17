@@ -1,22 +1,15 @@
 # graceful
 
 [![NPM version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
 [![Test coverage][cov-image]][cov-url]
-[![David deps][david-image]][david-url]
 [![npm download][download-image]][download-url]
 
 [npm-image]: https://img.shields.io/npm/v/graceful.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/graceful
-[travis-image]: https://img.shields.io/travis/node-modules/graceful.svg?style=flat-square
-[travis-url]: https://travis-ci.org/node-modules/graceful
 [cov-image]: https://codecov.io/github/node-modules/cfork/coverage.svg?branch=master
 [cov-url]: https://codecov.io/github/node-modules/cfork?branch=master
-[david-image]: https://img.shields.io/david/node-modules/cfork.svg?style=flat-square
-[david-url]: https://david-dm.org/node-modules/cfork
 [download-image]: https://img.shields.io/npm/dm/graceful.svg?style=flat-square
 [download-url]: https://npmjs.org/package/graceful
-
 
 Graceful exit when `uncaughtException` emit, base on `process.on('uncaughtException')`.
 
