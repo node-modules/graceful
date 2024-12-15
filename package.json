@@ -2,24 +2,6 @@
   "name": "graceful",
   "version": "1.1.0",
   "description": "Graceful exit when `uncaughtException` emit, base on `process.on('uncaughtException')`.",
-  "main": "index.js",
-  "files": [
-    "index.js"
-  ],
-  "scripts": {
-    "test": "egg-bin test",
-    "ci": "egg-bin cov",
-    "lint": "echo 'ignore'"
-  },
-  "dependencies": {
-    "humanize-ms": "^1.2.1",
-    "ps-tree": "^1.1.0"
-  },
-  "devDependencies": {
-    "egg-bin": "^5.6.1",
-    "express": "^4.16.4",
-    "supertest": "^1.2.0"
-  },
   "homepage": "https://github.com/node-modules/graceful",
   "repository": {
     "type": "git",
@@ -34,9 +16,65 @@
     "cluster",
     "graceful exit"
   ],
-  "engines": {
-    "node": ">= 0.10.0"
-  },
   "author": "fengmk2 <fengmk2@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">= 18.19.0"
+  },
+  "dependencies": {
+    "@fengmk2/ps-tree": "^2.0.2",
+    "humanize-ms": "^2.0.0"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.1",
+    "@eggjs/tsconfig": "1",
+    "@types/express": "^5.0.0",
+    "@types/mocha": "10",
+    "@types/node": "22",
+    "@types/supertest": "^6.0.2",
+    "egg-bin": "6",
+    "eslint": "8",
+    "eslint-config-egg": "14",
+    "express": "^4.21.2",
+    "mm": "^3.4.0",
+    "supertest": "^7.0.0",
+    "tshy": "3",
+    "tshy-after": "1",
+    "typescript": "5"
+  },
+  "scripts": {
+    "lint": "eslint --cache src test --ext .ts",
+    "pretest": "npm run lint -- --fix && npm run prepublishOnly",
+    "test": "egg-bin test",
+    "preci": "npm run lint && npm run prepublishOnly && attw --pack",
+    "ci": "egg-bin cov",
+    "prepublishOnly": "tshy && tshy-after"
+  },
+  "type": "module",
+  "tshy": {
+    "exports": {
+      ".": "./src/index.ts",
+      "./package.json": "./package.json"
+    }
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "types": "./dist/commonjs/index.d.ts",
+  "main": "./dist/commonjs/index.js",
+  "module": "./dist/esm/index.js"
 }

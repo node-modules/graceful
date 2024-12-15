@@ -1,13 +1,13 @@
 # express with cluster example
 
-* Master: dispatch.js
-* Worker: worker.js
-* Your application logic: app.js
+* Master: dispatch.cjs
+* Worker: worker.cjs
+* Your application logic: app.cjs
 
 ## Run
 
 ```bash
-$ node example/express_with_cluster/dispatch.js
+$ node example/express_with_cluster/dispatch.cjs
 ```
 
 ## Test
@@ -21,10 +21,10 @@ $ curl localhost:1337/asyncerror
 
 ```
 
-[dispatch.js](https://github.com/node-modules/graceful/blob/master/example/express_with_cluster/dispatch.js) stdout:
+[dispatch.cjs](https://github.com/node-modules/graceful/blob/master/example/express_with_cluster/dispatch.cjs) stdout:
 
 ```bash
-$ node example/express_with_cluster/dispatch.js
+$ node example/express_with_cluster/dispatch.cjs
 [Thu Apr 11 2013 18:45:36 GMT+0800 (CST)] [worker:21711] start listen on 1337
 [Thu Apr 11 2013 18:45:36 GMT+0800 (CST)] [worker:21712] start listen on 1337
 [uncaughtException] throw error 1 times

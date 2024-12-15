@@ -3,11 +3,12 @@
 [![NPM version][npm-image]][npm-url]
 [![Test coverage][cov-image]][cov-url]
 [![npm download][download-image]][download-url]
+[![Node.js Version](https://img.shields.io/node/v/graceful.svg?style=flat)](https://nodejs.org/en/download/)
 
 [npm-image]: https://img.shields.io/npm/v/graceful.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/graceful
-[cov-image]: https://codecov.io/github/node-modules/cfork/coverage.svg?branch=master
-[cov-url]: https://codecov.io/github/node-modules/cfork?branch=master
+[cov-image]: https://codecov.io/github/node-modules/graceful/coverage.svg?branch=master
+[cov-url]: https://codecov.io/github/node-modules/graceful?branch=master
 [download-image]: https://img.shields.io/npm/dm/graceful.svg?style=flat-square
 [download-url]: https://npmjs.org/package/graceful
 
@@ -23,7 +24,7 @@ It's the best way to handle `uncaughtException` on current situations.
 ## Install
 
 ```bash
-$ npm install graceful
+npm install graceful
 ```
 
 ## Usage
@@ -33,10 +34,10 @@ Please see [connect_with_cluster](https://github.com/fengmk2/graceful/tree/maste
 This below code just for dev demo, don't use it on production env:
 
 ```js
-var express = require('express');
-var graceful = require('graceful');
+const express = require('express');
+const { graceful } = require('graceful');
 
-var app = express()
+const app = express()
 .use()
 .use(function(req, res){
   if (Math.random() > 0.5) {
@@ -59,7 +60,7 @@ var app = express()
   res.end(err.message);
 });
 
-var server = app.listen(1984);
+const server = app.listen(1984);
 
 graceful({
   servers: [server],
@@ -79,24 +80,18 @@ graceful({
 If you are using [pm](https://github.com/aleafs/pm),
 you can follow the [graceful_exit with pm demo](https://github.com/aleafs/pm/tree/master/demo/graceful_exit).
 
-<!-- GITCONTRIBUTOR_START -->
-
 ## Contributors
 
-|[<img src="https://avatars.githubusercontent.com/u/156269?v=4" width="100px;"/><br/><sub><b>fengmk2</b></sub>](https://github.com/fengmk2)<br/>|[<img src="https://avatars.githubusercontent.com/u/985607?v=4" width="100px;"/><br/><sub><b>dead-horse</b></sub>](https://github.com/dead-horse)<br/>|[<img src="https://avatars.githubusercontent.com/u/19908330?v=4" width="100px;"/><br/><sub><b>hyj1991</b></sub>](https://github.com/hyj1991)<br/>|[<img src="https://avatars.githubusercontent.com/u/2399123?v=4" width="100px;"/><br/><sub><b>imyelo</b></sub>](https://github.com/imyelo)<br/>|
-| :---: | :---: | :---: | :---: |
+[![Contributors](https://contrib.rocks/image?repo=node-modules/graceful)](https://github.com/node-modules/graceful/graphs/contributors)
 
-
-This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto updated at `Thu Sep 22 2022 19:41:57 GMT+0800`.
-
-<!-- GITCONTRIBUTOR_END -->
+Made with [contributors-img](https://contrib.rocks).
 
 ## License
 
 (The MIT License)
 
-Copyright (c) 2013 - 2014 fengmk2 &lt;fengmk2@gmail.com&gt;
-Copyright (c) 2015 - 2016 node-modules and other contributors
+Copyright (c) 2013 - 2014 fengmk2
+Copyright (c) 2015 - present node-modules and other contributors
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
