@@ -1,6 +1,6 @@
 {
   "name": "graceful",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Graceful exit when `uncaughtException` emit, base on `process.on('uncaughtException')`.",
   "homepage": "https://github.com/node-modules/graceful",
   "repository": {

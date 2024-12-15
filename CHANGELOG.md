@@ -1,3 +1,45 @@
+# Changelog
+
+## [2.0.0](https://github.com/node-modules/graceful/compare/v1.1.0...v2.0.0) (2024-12-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop Node.js < 18.19.0 support
+
+part of https://github.com/eggjs/egg/issues/3644
+
+https://github.com/eggjs/egg/issues/5257
+
+closes https://github.com/node-modules/graceful/issues/16
+
+<!-- This is an auto-generated comment: release notes by coderabbit.ai
+-->
+## Summary by CodeRabbit
+
+- **New Features**
+	- Introduced a new ESLint configuration for TypeScript and Node.js.
+	- Added a new GitHub Actions workflow for package publishing.
+	- Implemented a new TypeScript configuration for enhanced type safety.
+	- Created a new test suite for validating worker process behavior.
+	- Added a new test suite for verifying child process behavior.
+
+- **Bug Fixes**
+- Updated Node.js CI workflow to include newer versions and improved
+configurations.
+
+- **Documentation**
+	- Enhanced README with updated badges and installation instructions.
+	- Updated example documentation to reflect file extension changes.
+
+- **Chores**
+	- Removed outdated files and workflows to streamline the repository.
+	- Updated `.gitignore` to exclude additional files and directories.
+<!-- end of auto-generated comment: release notes by coderabbit.ai -->
+
+### Features
+
+* support cjs and esm both by tshy ([#17](https://github.com/node-modules/graceful/issues/17)) ([7192a67](https://github.com/node-modules/graceful/commit/7192a67f5beeee90e085417287ad3918c21dd271))
 
 1.1.0 / 2022-09-22
 ==================
