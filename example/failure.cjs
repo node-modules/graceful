@@ -2,7 +2,7 @@
 
 var http = require('http');
 var express = require('express');
-var graceful = require('../');
+var { graceful } = require('../');
 
 var keepAliveClient = http.request({
   host: 'www.google.com',

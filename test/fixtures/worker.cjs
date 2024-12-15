@@ -1,5 +1,3 @@
-'use strict';
-
 console.log('worker1 [%s] started', process.pid);
 
 setTimeout(function() {

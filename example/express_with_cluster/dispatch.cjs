@@ -1,11 +1,9 @@
-"use strict";
-
 // http://nodejs.org/docs/latest/api/domain.html#domain_warning_don_t_ignore_errors
 var cluster = require('cluster');
 var path = require('path');
 
 cluster.setupMaster({
-  exec: path.join(__dirname, 'worker.js')
+  exec: path.join(__dirname, 'worker.cjs')
 });
 
 // In real life, you'd probably use more than just 2 workers,

@@ -1,7 +1,7 @@
 "use strict";
 
 var PORT = +process.env.PORT || 1337;
-var graceful = require('../../');
+var { graceful } = require('../../');
 var server = require('./app');
 server.listen(PORT);
 console.log('[%s] [worker:%s] web server start listen on %s', new Date(), process.pid, PORT);
