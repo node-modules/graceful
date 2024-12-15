@@ -18,7 +18,6 @@ Graceful exit when `uncaughtException` emit, base on `process.on('uncaughtExcept
 
 It's the best way to handle `uncaughtException` on current situations.
 
-* [domain failure](https://github.com/fengmk2/domain-middleware/blob/master/example/failure.js).
 * [Node.js 异步异常的处理与domain模块解析](http://deadhorse.me/nodejs/2013/04/13/exception_and_domain.html)
 
 ## Install
@@ -29,7 +28,7 @@ npm install graceful
 
 ## Usage
 
-Please see [connect_with_cluster](https://github.com/fengmk2/graceful/tree/master/example/connect_with_cluster) example.
+Please see [express_with_cluster](https://github.com/node-modules/graceful/tree/master/example/express_with_cluster) example.
 
 This below code just for dev demo, don't use it on production env:
 
@@ -77,8 +76,11 @@ graceful({
 });
 ```
 
-If you are using [pm](https://github.com/aleafs/pm),
-you can follow the [graceful_exit with pm demo](https://github.com/aleafs/pm/tree/master/demo/graceful_exit).
+### ESM and TypeScript
+
+```ts
+import { graceful } from 'graceful';
+```
 
 ## Contributors
 
